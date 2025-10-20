@@ -1,5 +1,6 @@
-*.csv
-.ipynb_checkpoints/
 predictors/
+predictors_rel_L1/
+mlp_data_rel_L1/
+.ipynb_checkpoints/
 __pycache__/
 *.pyc
