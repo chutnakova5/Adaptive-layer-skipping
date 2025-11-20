@@ -114,7 +114,7 @@ class LinearRegression:
 
         self.scaler_y = MinMaxScaler(device=self.device)
         y = self.scaler_y.fit_transform(y.reshape(-1, 1))
-        self.scaler_y = self.scaler_y.to(DEV)
+        y_val = self.scaler_y.transform(y_val.reshape(-1, 1))
         
         n_samples, n_features = X.shape
         self.model = nn.Linear(n_features, 1).to(self.device)
@@ -294,6 +294,7 @@ class MLPRegressor:
 
         self.scaler_y = MinMaxScaler(device=self.device)
         y = self.scaler_y.fit_transform(y.reshape(-1, 1))
+        y_val = self.scaler_y.transform(y_val.reshape(-1, 1))
         
         n_samples, n_features = X.shape
         self.model = nn.Sequential(
